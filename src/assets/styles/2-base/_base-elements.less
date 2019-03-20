@@ -1,0 +1,106 @@
+/*
+Herbruikbare basis elementen
+*/
+
+.visible{
+  display: block;
+  animation: slide .3s ease-in-out;
+}
+.absolute{position: absolute;margin:auto;}
+main{
+  position: relative;
+}
+.a-center{
+  .absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  margin:auto;
+}
+.a-vertical-center{
+  .absolute;
+  top:0;
+  bottom:0;
+}
+.a-horizontal-center{
+  .absolute;
+  left:0;
+  right:0;
+}
+.div{
+  display: block;
+}
+.left-floated{float: left;}
+.right-floated{float: right;}
+.cleared,.clear{clear:both;}
+ul li{margin-bottom: 7px; }
+
+.status-message{
+  margin-top:20px;
+  display: block;
+  font-weight: 400;
+  font-family: @font-family-content;
+  position: relative;
+  padding-left: 35px;
+  font-size: 1.1em;
+  &:before{
+    position: absolute;
+    left:0;
+    top:50%;
+    transform: translateY(-50%);
+  }
+  &.warning{
+    color: @orange;
+    &:before{
+      display: inline-block;
+      content: url("../images/icons/exclamation-triangle-orange.svg");
+      margin-right: 7px;
+    }
+  }
+}
+span.price{
+  color: @font-color-base;
+  &.initial-price{
+    opacity: 0.5;
+    text-decoration: line-through;
+    margin-bottom: 16px;
+  }
+}
+.overlay{
+  background: rgba(0, 0, 0, 0.9);
+  display: none;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  //width:  calc(~'100% - 20px');
+  height: 100%;
+  position: fixed;
+  z-index: 100;
+  &.visible{
+    display: block;
+  }
+}
+.no-items-added{
+  z-index: 999;
+  font-size: 1.1em;
+  line-height: 120%;
+  display: block;
+  position: absolute;
+  top:0px;
+  right:0;
+  background: #fff;
+  padding:10px;
+  width: 100%;
+  text-align: center;
+}
+//Standaard animaties
+.move-in-and-out{
+  transform: translateY(-100%) translateX(0) scale(0.9); opacity: 1;
+  animation: 3s ease-in-out moveInAndOut forwards;
+}
+.move-out-to-top{
+  transform: translateY(0) translateX(0) scale(0); opacity: 1;
+  animation: .5s ease-in-out moveOutToTop forwards;
+}

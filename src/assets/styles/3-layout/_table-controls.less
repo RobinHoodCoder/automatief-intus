@@ -1,0 +1,98 @@
+.table-controls{
+  margin: 20px 10px;
+  font-size: 1.15em;
+  .table-actions{
+    display: flex;
+    justify-content: space-between;
+  }
+  .control-buttons, .search-box, .max-entry-amount{
+    margin-bottom: 10px;
+  }
+  .search-box input{
+    max-width: 157px;
+    height: 40px;
+    padding: 0 10px;
+  }
+
+  @media @tablet {
+    display: flex;
+    justify-content: space-between;
+    .search-box{
+      margin-right: 20px;
+      input{
+        max-width: none;
+      }
+    }
+  }
+  @media @desktop {
+    display: flex;
+    justify-content: space-between;
+    .search-box{
+      margin-right: 20px;
+      input{
+        max-width: none;
+      }
+    }
+  }
+  > div{
+    &:first-child{
+      //width: 15%;
+    }
+    &:nth-child(2){
+      //width: 80%;
+
+    }
+  }
+  .max-entry-amount{
+    white-space: nowrap;
+    select{
+      margin:0 7px;
+    }
+  }
+}
+.table-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 30px 20px;
+  > div {
+    margin-bottom: 10px;
+  }
+  .result-information{
+    margin-right: 10px;
+  }
+
+
+  @media @tablet, @desktop{
+    justify-content: space-between;
+  }
+  .pagination {
+    border: 1px solid @border-color;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: nowrap;
+    span{
+      display: block;
+      color: @theme-color-main;
+      padding: 10px 8.5px;
+      @media @tablet, @desktop{
+        padding: 10px 11px;
+      }
+    }
+    .prev-button{
+      border-right: 1px solid @border-color;
+    }
+    .page-btn {
+      font-size: 1.1em;
+      &:not(:last-of-type) {
+        border-right: 1px solid @border-color;
+      }
+      &.active{
+        background-image: linear-gradient( 60deg, rgb(198,65,100) 50%, rgb(115,62,188) 100%);
+        color: #fff;
+      }
+    }
+  }
+}

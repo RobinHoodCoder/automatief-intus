@@ -1,0 +1,30 @@
+/*0. Plugins -- CSS van andere vendors*/
+//@import '0-plugins/_0-plugins.less';
+
+/* 1. Helpers -- Alle functies, mixins en variables worden hier gezet
+Alles wordt gereset
+*/
+@import "1-helpers/_variables.less";
+@import "1-helpers/_reset.less";
+@import "1-helpers/_mediaqueries.less";
+@import "1-helpers/_mixins";
+@import "1-helpers/_functions";
+
+/* 2. Base -- Styling van de kleinste onderdelen*/
+@import "2-base/_typography.less";
+@import "2-base/_buttons.less";
+@import "2-base/_grid.less";
+@import "2-base/_forms.less";
+@import "2-base/_base-elements.less";
+
+/* 3. Layout -- Styling van de grotere onderdelen */
+@import "3-layout/_nav.less";
+@import "3-layout/_tables.less";
+@import "3-layout/_table-controls.less";
+
+
+/*4. Modules -- Styling van additionele modules voor hergebruik*/
+@import "4-modules/_lightbox.less";
+
+/* 5. Templates -- Styling van pagina-specifieke elementen*/
+@import "5-templates/_user-overview.less";

@@ -1,0 +1,28 @@
+{
+  "name": "steinbach-media",
+  "description": "Eerste nodjejs project",
+  "main": "/templates/layouts/_header.php",
+  "authors": [
+    "Steinbach Media"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "photoswipe": "^4.1.2",
+    "jquery": "^3.3.1",
+    "swiper": "^4.4.6",
+    "jquery-smooth-scroll": "^2.2.0",
+    "list.js": "^1.5.0",
+    "dynatable": "^0.3.1",
+    "tabulator": "^4.2.3"
+  },
+  "devDependencies": {}
+}

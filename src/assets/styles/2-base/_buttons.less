@@ -1,0 +1,45 @@
+/*
+Button styling
+*/
+button:hover {
+    cursor: pointer;
+    opacity: 0.9;
+}
+a,button{
+    &:hover,&:active,&:focus{
+        outline:0;
+    }
+}
+button{
+    transition: all .2s ease-in-out;
+}
+
+.control-buttons{
+    button{
+        width: 40px;
+        height: 40px;
+        display: block;
+        float:left;
+        &:not(:first-child):not(:last-of-type){
+            border-top: 1px solid @border-color;
+            border-bottom: 1px solid @border-color;
+        }
+        &:first-child{
+            border-radius: 10px 0 0 10px;
+            border: 1px solid @border-color;
+        }
+        &:last-of-type{
+            border-radius: 0 10px 10px 0;
+            border: 1px solid @border-color;
+        }
+    }
+}
+button.add-new-item{
+    background: url("/assets/images/icons/plus.svg") no-repeat center center;
+}
+button.show-settings{
+    background: url("/assets/images/icons/cog.svg") no-repeat center center;
+}
+button.show-calendar{
+    background: url("/assets/images/icons/calendar.svg") no-repeat center center;
+}

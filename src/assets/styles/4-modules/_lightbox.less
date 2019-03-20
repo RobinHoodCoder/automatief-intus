@@ -1,0 +1,99 @@
+/*
+Styling van de productfoto slider
+*/
+
+.lightbox{
+  position: relative;
+  margin-bottom: 20px;
+}
+.swiper-container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.swiper-slide {
+  overflow: hidden;
+  text-align: center;
+  a{
+    display: block;
+  }
+}
+.gallery-top{
+  border-radius: 10px;
+  box-shadow: 0px 9px 29px 0px rgba(35, 31, 32, 0.19);
+  width: 100%;
+  .swiper-slide img{
+      max-width: 100%;
+      max-height: 300px;
+  }
+  a{
+    padding: 10px;
+    @media @tablet{
+      min-height: 300px;
+    }
+    @media @desktop{
+      padding:20px;
+    }
+  }
+}
+
+.gallery-thumbs {
+  margin-top: 34px;
+  box-sizing: border-box;
+  .swiper-slide {
+    cursor: pointer;
+    padding: 10px;
+    width: 25%;
+    min-width: 120px;
+    height: 100%;
+    opacity: 0.4;
+    border: 1px solid @font-color-light;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-right: 10px;
+    transition: all .2s ease-in-out;
+    img {
+      max-height: 100%;
+    }
+    &:hover{
+      opacity: 0.6;
+    }
+  }
+
+  .swiper-slide-thumb-active {
+    opacity: 1;
+    &:hover{
+      opacity: 1;
+    }
+  }
+}
+
+.swiper-button-prev, .swiper-button-next {
+  position: absolute;
+  top: 50%;
+  width: 13px;
+  height: 44px;
+  margin-top: -22px;
+  z-index: 10;
+  cursor: pointer;
+  background-size: 27px 44px;
+  background-position: center;
+  background-repeat: no-repeat;
+  &.swiper-button-disabled {
+    opacity: 0.35;
+    cursor: auto;
+    pointer-events: none;
+  }
+}
+.swiper-button-prev{
+  left:5px;
+  background: url("../images/icons/chevron-left.svg") no-repeat center center;
+  @media @desktop{  left:10px;  }
+  @media @tablet{  left:10px;  }
+}
+.swiper-button-next{
+  right:5px;
+  background: url("../images/icons/chevron-right.svg") no-repeat center center;
+  @media @desktop{  right:10px;  }
+  @media @tablet{  right:10px;  }
+}

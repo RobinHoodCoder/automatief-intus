@@ -1,0 +1,105 @@
+/*
+Styling van breedte van (responsive) kolommen
+*/
+
+
+@gutter: 30px;
+
+.wrapper{
+  width:  calc(~'100% - 20px');
+  max-width: 1200px;
+  margin: 0 auto;
+  @media @wrapper-reached{
+    width: 100%;
+  }
+}
+
+.grid .col{
+  padding-left: 10px;
+  float: left;
+}
+.grid > .offset{
+  margin-left: -10px;
+}
+.col-6{
+  width: 50%;
+}
+.col-12{
+  width: 100%;
+}
+.col-3{
+  width: 25%;
+}
+
+@media @tablet{
+  .col-t-6{
+    width: 50%;
+  }
+  .col-t-3{
+    width: 25%;
+  }
+  .col-t-12{
+    width: 100%;
+  }
+}
+@media @desktop{
+  .col-d-6{
+    width: 50%;
+  }
+  .col-d-3{
+    width: 25%;
+  }
+  .col-d-12{
+      width: 100%;
+  }
+}
+
+
+.t-row{
+  width: 100%;
+  padding-bottom: 10px;
+  .t-col-6{
+    width: 50%;
+    display: inline-block;
+    span{
+      display: block;
+    }
+  }
+}
+
+
+.main-cols{
+  margin-top:30px;
+  .col{
+    &.col-product-detail-images{
+
+      @media @tablet{
+        @gutter: 10px;
+        float:left;
+        width: 50%;
+        margin-right: -@gutter;
+        padding-right: @gutter;
+      }
+      @media @desktop{
+        float:left;
+        width: 50%;
+        margin-right: -@gutter;
+        padding-right: @gutter;
+      }
+    }
+    &.col-product-detail-order{
+      @media @tablet{ float:left;
+        @gutter: 10px;
+        width: 50%;
+        margin-left: @gutter;
+        padding-right: -@gutter;
+      }
+      @media @desktop{
+        float:left;
+        margin-left: @gutter;
+        padding-right: -@gutter;
+        width: 50%;
+      }
+    }
+  }
+}
