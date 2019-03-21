@@ -40,13 +40,4 @@
       </profile-state>
     </entry>
   </component>
-  <component name="VagrantProjectSettings">
-    <option name="envs">
-      <map>
-        <entry key="PATH" value="C:\Program Files\nodejs\" />
-      </map>
-    </option>
-    <option name="instanceFolder" value="" />
-    <option name="provider" value="" />
-  </component>
 </project>

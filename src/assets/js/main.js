@@ -1,10 +1,10 @@
-import "@babel/polyfill";
-
+// import "@babel/polyfill";
+// Polyfills voor babel (zodat het werkt in IE 11)
 ($(function() {
-    
+
 
     const tableHeaderDom = document.querySelector('.table-header');
-    const cols = tableHeaderDom.querySelectorAll('.col');
+    const headerCols = tableHeaderDom.querySelectorAll('.col');
     const tableBodyDOM = document.querySelector('.table-body');
     const resultInformationDOM = document.querySelector('.result-information');
 
@@ -76,6 +76,8 @@ import "@babel/polyfill";
     // },1000)
 
 
+
+
     // sorteer de resultaten met deze functie
     function sortResults(prop, data, asc) {
         data.sort(function(a, b) {
@@ -87,7 +89,7 @@ import "@babel/polyfill";
         });
     }
     // Maak kolommen DOM
-    function rowColsRender(description, item) {
+    function rowheaderColsRender(description, item) {
         if (description == 'status') {
             return `<div class="col ${description}"><span class="status ${item}">${item}</span></div>`;
         }else{
@@ -117,23 +119,23 @@ import "@babel/polyfill";
 
                 $.each(sortedData, function (key, data) {
 
-                    let renderCols = [];
+                    let renderheaderCols = [];
                     //Zet alle kolommen met werknemergegevens bij elkaar
                     $.each(data, function (key, colContent) {
-                        renderCols.push(rowColsRender(key, colContent));
+                        renderheaderCols.push(rowheaderColsRender(key, colContent));
                     });
 
                     //checkbox moet aan elke eerste kolom worden toegevoegd...
                     let checkboxDOM = `<div class="col"><span class="checkbox"></span></div>`;
                     //Zet de checkbox aan het begin van de array met te renderen elementen
-                    renderCols.unshift(checkboxDOM);
+                    renderheaderCols.unshift(checkboxDOM);
 
                     //Maak nieuwe rij voor de tabel met werknemers
                     let newRow = document.createElement('div');
                     newRow.className += 'row';
 
                     //Zet de colommen (gegevens van medewerkers) in de rijen...
-                    newRow.innerHTML = renderCols.join("");
+                    newRow.innerHTML = renderheaderCols.join("");
 
                     //Zet de nieuwe elementen in de table body
                     tableBodyDOM.appendChild(newRow);
@@ -148,8 +150,8 @@ import "@babel/polyfill";
         createSortedTable('name','asc');
 
         //Sorteer resultaten in tabel door op elementen te klikken...
-        for (var i = 0; i < cols.length; i++) {
-            var sortItem = cols[i];
+        for (var i = 0; i < headerCols.length; i++) {
+            var sortItem = headerCols[i];
             let action = sortItem.getAttribute("data-sort");
 
             if(action){

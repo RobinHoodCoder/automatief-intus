@@ -90,12 +90,9 @@ function updatevendors(){
 }
 
 //Copy html naar build map
-/*
-* Hier vollapse whitespace uitzetten voor minified versie
-* */
 function htmldest() {
     return src("./src/**/*.html")
-        .pipe(htmlmin({ collapseWhitespace: false }))
+        .pipe(htmlmin({ collapseWhitespace: true }))
         .pipe(dest('./build/'));
 }
 
@@ -170,7 +167,7 @@ function css() {
         .pipe(sourcemaps.init())
         .pipe(plumber())
         .pipe(less())
-        // .pipe(postcss([autoprefixer(), cssnano()])) //Minify en autoprefixer. Zet deze om voor productie
+        .pipe(postcss([autoprefixer(), cssnano()])) //Minify en autoprefixer. Zet deze om voor productie
         .pipe(sourcemaps.write())
         .pipe(dest('build/assets/css'))
         .pipe(browsersync.stream());
